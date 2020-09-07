@@ -15,8 +15,8 @@ namespace Payment.BRules.Test
         [TestMethod]
         public void ValidateRules()
         {
-            var membership = new CommissionPayment();
-            var result = membership.Handle("commission");
+            var comptm = new CommissionPayment();
+            var result = comptm.Handle("commission");
 
             // Assert
             Assert.AreEqual("Generate a commission payment to the agent", result);
@@ -26,8 +26,8 @@ namespace Payment.BRules.Test
         [TestMethod]
         public void CheckNullRules()
         {
-            var membershipMock = new Mock<CommissionPayment> { CallBase = true };
-            var result = membershipMock.Setup(m => m.Handle("commission")).Returns("Generate a commission payment to the agent");
+            var comptmMock = new Mock<CommissionPayment> { CallBase = true };
+            var result = comptmMock.Setup(m => m.Handle("commission")).Returns("Generate a commission payment to the agent");
             // Assert
             Assert.IsNotNull(result);
 

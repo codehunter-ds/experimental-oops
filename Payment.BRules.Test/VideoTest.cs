@@ -15,8 +15,8 @@ namespace Payment.BRules.Test
         [TestMethod]
         public void ValidateRules()
         {
-            var membership = new Video();
-            var result = membership.Handle("video");
+            var video = new Video();
+            var result = video.Handle("video");
 
             // Assert
             Assert.AreEqual("Add a 'First Aid' video to the packing sleep", result);
@@ -26,8 +26,8 @@ namespace Payment.BRules.Test
         [TestMethod]
         public void CheckNullRules()
         {
-            var membershipMock = new Mock<Video> { CallBase = true };
-            var result = membershipMock.Setup(m => m.Handle("video")).Returns("Add a 'First Aid' video to the packing sleep");
+            var videoMock = new Mock<Video> { CallBase = true };
+            var result = videoMock.Setup(m => m.Handle("video")).Returns("Add a 'First Aid' video to the packing sleep");
             // Assert
             Assert.IsNotNull(result);
 

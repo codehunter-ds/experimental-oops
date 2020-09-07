@@ -27,5 +27,17 @@ namespace Payment.BRules.Test
             Assert.IsNotNull(result);
 
         }
+
+
+        [TestMethod]
+        public void RuleNotMatch()
+        {
+            var phyproduct = new PhysicalProduct();
+            var result = phyproduct.Handle("Failure");
+
+            // Assert
+            Assert.AreNotEqual("Activate Membership", result);
+
+        }
     }
 }

@@ -12,8 +12,8 @@ namespace Payment.BRules.Test
         [TestMethod]
         public void ValidateRules()
         {
-            var membership = new PhysicalProduct();
-            var result = membership.Handle("physical");
+            var phyproduct = new PhysicalProduct();
+            var result = phyproduct.Handle("physical");
 
             // Assert
             Assert.AreEqual("Create a packing slip for shipping", result); 
@@ -23,10 +23,22 @@ namespace Payment.BRules.Test
         [TestMethod]
         public void CheckNullRules()
         {
-            var membershipMock = new Mock<PhysicalProduct> { CallBase = true };
-            var result = membershipMock.Setup(m => m.Handle("physical")).Returns("Create a packing slip for shipping");
+            var phyproductMock = new Mock<PhysicalProduct> { CallBase = true };
+            var result = phyproductMock.Setup(m => m.Handle("physical")).Returns("Create a packing slip for shipping");
             // Assert
             Assert.IsNotNull(result);   
+
+        }
+
+
+        [TestMethod]
+        public void RuleNotMatch()
+        {
+            var phyproduct = new PhysicalProduct();
+            var result = phyproduct.Handle("Failure");
+
+            // Assert
+            Assert.AreNotEqual("Create a packing slip for shipping", result);
 
         }
     }

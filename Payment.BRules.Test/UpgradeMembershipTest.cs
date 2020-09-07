@@ -15,8 +15,8 @@ namespace Payment.BRules.Test
         [TestMethod]
         public void ValidateRules()
         {
-            var membership = new UpgradeMembership();
-            var result = membership.Handle("upgrade");
+            var upmembership = new UpgradeMembership();
+            var result = upmembership.Handle("upgrade");
 
             // Assert
             Assert.AreEqual("Apply the upgrade\n", result);
@@ -26,8 +26,8 @@ namespace Payment.BRules.Test
         [TestMethod]
         public void CheckNullRules()
         {
-            var membershipMock = new Mock<UpgradeMembership> { CallBase = true };
-            var result = membershipMock.Setup(m => m.Handle("upgrade")).Returns("Apply the upgrade\n");
+            var upmembershipMock = new Mock<UpgradeMembership> { CallBase = true };
+            var result = upmembershipMock.Setup(m => m.Handle("upgrade")).Returns("Apply the upgrade\n");
             // Assert
             Assert.IsNotNull(result);    
 

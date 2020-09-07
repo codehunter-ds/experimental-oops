@@ -15,8 +15,8 @@ namespace Payment.BRules.Test
         [TestMethod]
         public void ValidateRules()
         {
-            var membership = new ProdcutBook();
-            var result = membership.Handle("book");
+            var productbk = new ProdcutBook();
+            var result = productbk.Handle("book");
 
             // Assert
             Assert.AreEqual("Create duplicate packing slip for the royalty department", result);
@@ -25,8 +25,8 @@ namespace Payment.BRules.Test
         [TestMethod]
         public void CheckNullRules()
         {
-            var membershipMock = new Mock<ProdcutBook> { CallBase = true };
-            var result = membershipMock.Setup(m => m.Handle("book")).Returns("Create duplicate packing slip for the royalty department");
+            var productbkMock = new Mock<ProdcutBook> { CallBase = true };
+            var result = productbkMock.Setup(m => m.Handle("book")).Returns("Create duplicate packing slip for the royalty department");
             // Assert
             Assert.IsNotNull(result);
 

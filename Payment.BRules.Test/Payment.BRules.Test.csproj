@@ -67,6 +67,7 @@
     <Compile Include="PhysicalProductTest.cs" />
     <Compile Include="ProdcutBookTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AbstractHandlerTest.cs" />
     <Compile Include="SendEmailTest.cs" />
     <Compile Include="UpgradeMembershipTest.cs" />
     <Compile Include="VideoTest.cs" />
