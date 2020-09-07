@@ -1,4 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <PaymentProcessing>
-  <PaymentType>Membership</PaymentType>
+  <PaymentType>PhysicalProduct</PaymentType>
 </PaymentProcessing>

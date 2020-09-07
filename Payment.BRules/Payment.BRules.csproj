@@ -50,7 +50,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Input\PaymentInfo.xml" />
+    <Content Include="Input\PaymentInfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RulesEngine\RulesEngine.csproj">
+      <Project>{C78D85D3-3E1F-48B0-8CFA-AE3D428C2948}</Project>
+      <Name>RulesEngine</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
