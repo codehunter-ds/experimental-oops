@@ -1,5 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
+using RulesEngine.Rules;
 
 namespace Payment.BRules.Test
 {
@@ -7,8 +9,23 @@ namespace Payment.BRules.Test
     public class MembershipTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void ValidateRules()
         {
+            var membership = new Membership();
+            var result = membership.Handle("new");
+
+            // Assert
+            Assert.AreEqual("Activate Membership", result);
+        }
+
+        [TestMethod]
+        public void CheckNullRules()
+        {
+            var membershipMock = new Mock<Membership> { CallBase = true };
+            var result = membershipMock.Setup(m => m.Handle("new")).Returns("Activate Membership");
+            // Assert
+            Assert.IsNotNull(result);
+
         }
     }
 }

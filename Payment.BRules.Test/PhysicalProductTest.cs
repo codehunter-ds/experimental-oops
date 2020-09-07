@@ -24,7 +24,7 @@ namespace Payment.BRules.Test
         public void CheckNullRules()
         {
             var membershipMock = new Mock<PhysicalProduct> { CallBase = true };
-            var result = membershipMock.Setup(m => m.Handle("new")).Returns("Activate Membership");
+            var result = membershipMock.Setup(m => m.Handle("physical")).Returns("Create a packing slip for shipping");
             // Assert
             Assert.IsNotNull(result);   
 
