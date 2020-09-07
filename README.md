@@ -1,3 +1,6 @@
+
+The solution is an implementation of Business Rules which execute the rules according to the Payment Type.
+
 1) Step Of Execution:
 
 - Change the PaymentType in PaymentInfo.xml file under Input folder of Payment.BRules csproj
