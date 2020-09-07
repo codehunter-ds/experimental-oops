@@ -4,7 +4,18 @@ using System.Text;
 
 namespace RulesEngine.Rules
 {
-    class Membership
+    public class Membership : AbstractHandler
     {
+        public override object Handle(object request)
+        {
+            if ((request as string) == "new")
+            {
+                return "Activate Membership";
+            }
+            else
+            {
+                return base.Handle(request);
+            }
+        }
     }
 }

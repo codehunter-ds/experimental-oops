@@ -4,7 +4,18 @@ using System.Text;
 
 namespace RulesEngine.Rules
 {
-    class UpgradeMembership
+    public class UpgradeMembership : AbstractHandler
     {
+        public override object Handle(object request)
+        {
+            if ((request as string) == "upgrade")
+            {
+                return "Apply the upgrade\n";
+            }
+            else
+            {
+                return base.Handle(request);
+            }
+        }
     }
 }

@@ -4,7 +4,18 @@ using System.Text;
 
 namespace RulesEngine.Rules
 {
-    class ProdcutBook
+    public class ProdcutBook : AbstractHandler
     {
+        public override object Handle(object request)
+        {
+            if ((request as string) == "book")
+            {
+                return "Create duplicate packing slip for the royalty department";
+            }
+            else
+            {
+                return base.Handle(request);
+            }
+        }
     }
 }
