@@ -8,9 +8,9 @@ namespace RulesEngine.Rules
     {
         public override object Handle(object request)
         {
-            if ((request as string) == "email")
+            if ((request as string) == "commission")
             {
-                return "Send Email";
+                return "Generate a commission payment to the agent";
             }
             else
             {
