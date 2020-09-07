@@ -33,6 +33,16 @@ namespace Payment.BRules.Test
             // Assert
             Assert.IsNotNull(email);
 
+        }
+
+        [TestMethod]
+        public void RuleNotMatch()
+        {
+            var phyproduct = new SendEmail();
+            var result = phyproduct.Handle("Failure");
+
+            // Assert
+            Assert.AreNotEqual("Send Email about subscription", result);
 
         }
     }

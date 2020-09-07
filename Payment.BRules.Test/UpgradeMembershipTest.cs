@@ -32,5 +32,16 @@ namespace Payment.BRules.Test
             Assert.IsNotNull(result);    
 
         }
+
+        [TestMethod]
+        public void RuleNotMatch()
+        {
+            var phyproduct = new UpgradeMembership();
+            var result = phyproduct.Handle("Failure");
+
+            // Assert
+            Assert.AreNotEqual("Apply the upgrade\n", result);
+
+        }
     }
 }

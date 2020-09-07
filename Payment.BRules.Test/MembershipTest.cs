@@ -32,7 +32,7 @@ namespace Payment.BRules.Test
         [TestMethod]
         public void RuleNotMatch()
         {
-            var phyproduct = new PhysicalProduct();
+            var phyproduct = new Membership();
             var result = phyproduct.Handle("Failure");
 
             // Assert

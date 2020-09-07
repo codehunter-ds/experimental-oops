@@ -32,5 +32,16 @@ namespace Payment.BRules.Test
             Assert.IsNotNull(result);
 
         }
+
+        [TestMethod]
+        public void RuleNotMatch()
+        {
+            var phyproduct = new CommissionPayment();
+            var result = phyproduct.Handle("Failure");
+
+            // Assert
+            Assert.AreNotEqual("Generate a commission payment to the agent", result);
+
+        }
     }
 }

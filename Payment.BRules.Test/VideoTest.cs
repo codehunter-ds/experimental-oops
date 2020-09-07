@@ -32,5 +32,16 @@ namespace Payment.BRules.Test
             Assert.IsNotNull(result);
 
         }
+
+        [TestMethod]
+        public void RuleNotMatch()
+        {
+            var phyproduct = new Video();
+            var result = phyproduct.Handle("Failure");
+
+            // Assert
+            Assert.AreNotEqual("Add a 'First Aid' video to the packing sleep", result);
+
+        }
     }
 }

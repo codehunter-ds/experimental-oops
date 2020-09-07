@@ -31,5 +31,16 @@ namespace Payment.BRules.Test
             Assert.IsNotNull(result);
 
         }
+
+        [TestMethod]
+        public void RuleNotMatch()
+        {
+            var phyproduct = new ProdcutBook();
+            var result = phyproduct.Handle("Failure");
+
+            // Assert
+            Assert.AreNotEqual("Create duplicate packing slip for the royalty department", result);
+
+        }
     }
 }
